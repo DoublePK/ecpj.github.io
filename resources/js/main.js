@@ -90,7 +90,7 @@ function downloadImg(e){
   e.preventDefault();
   console.log('aaa')
   const link = document.createElement('a');
-  link.download = 'download.png';
+  link.download = 'download.jpg';
   link.href = voucherCanvas.toDataURL();
   link.click();
   link.delete;
