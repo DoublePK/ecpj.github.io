@@ -23,7 +23,12 @@ const voucherAmount = document.querySelector('.voucher__amount');
 const voucherSN = document.querySelector('.voucher__SN');
 const voucherDate = document.querySelector('.voucher__date');
 
+const modal = document.querySelector('.modal');
+const modalImg = document.querySelector('.modal__img');
+const download = document.querySelector('.modal__btn');
+
 let Name, Amount, Batch, date, SerialNumber, Remark = '';
+let voucherCanvas;
 
 function displayCheck(e){
   e.preventDefault();
@@ -53,36 +58,40 @@ function displayForm(e){
 function screenshot() {
   
   html2canvas(document.querySelector('.voucher')).then(function(canvas) {
-      const modal = document.createElement('div');
-      modal.className = 'modal';
+      // const modal = document.createElement('div');
+      // modal.className = 'modal';
 
-      const modalContent = document.createElement('div');
-      modalContent.className = 'modal__content';
+      // const modalContent = document.createElement('div');
+      // modalContent.className = 'modal__content';
 
-      const modalImg = document.createElement('div');
-      modalImg.className = 'modal__img';
+      // const modalImg = document.createElement('div');
+      // modalImg.className = 'modal__img';
 
-      const modalBtn = document.createElement('button');
-      modalBtn.className = 'modal__btn';
-      modalBtn.innerText = 'Save Image';
+      // const modalBtn = document.createElement('button');
+      // modalBtn.className = 'modal__btn';
+      // modalBtn.setAttribute('type', 'button')
+      // modalBtn.innerText = 'Save Image';
+      // download = modalBtn;
 
       canvas.className = 'modal_canvas';
       canvas.removeAttribute('style');
+      modalImg.appendChild(canvas)
 
-      modalImg.appendChild(canvas);
-      modalContent.appendChild(modalImg);
-      modalContent.appendChild(modalBtn);
-      modal.appendChild(modalContent);
+      // modalImg.appendChild(canvas);
+      // modalContent.appendChild(modalImg);
+      // modalContent.appendChild(modalBtn);
+      // modal.appendChild(modalContent);
 
-      // modal.appendChild(canvas)
-      document.body.appendChild(modal)
+      // // modal.appendChild(canvas)
+      // document.body.appendChild(modal)
       modal.style.display = 'block';
+      voucherCanvas = canvas;
   });
 }
 
 function voucherModal(voucher){
   console.log(voucher);
-  
+  document.body.appendChild(voucher)
 }
 
 function displayVoucher(e){
@@ -93,9 +102,25 @@ function displayVoucher(e){
     voucherAmount.innerHTML = Amount;
     voucherDate.innerHTML = date;
     voucherSN.innerHTML = SerialNumber;
-  let voc = screenshot();
+  voucherCanvas = screenshot();
   voucher.style.display = 'none';
-  voucherModal(voc);
+  document.querySelector('.footer').style.display = 'none';
+  formName.value = '';
+  formAmount.value = '';
+  formBatch.value = '';
+  formDate.value = '';
+  formSN.value = '';
+  // voucherModal(voucherCanvas);
+}
+
+function downloadImg(e){
+  e.preventDefault();
+  console.log('aaa')
+  const link = document.createElement('a');
+  link.download = 'download.png';
+  link.href = voucherCanvas.toDataURL();
+  link.click();
+  link.delete;
 }
 
 formContent.addEventListener('submit', displayCheck);
@@ -103,5 +128,7 @@ formContent.addEventListener('submit', displayCheck);
 EditBtn.addEventListener('click', displayForm);
 
 SubmitBtn.addEventListener('click', displayVoucher)
+
+download.addEventListener('click', downloadImg)
 
 //displayVoucher();

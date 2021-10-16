@@ -19,15 +19,10 @@
 
   <div class="l-form">
     <div class="form">
-      <!-- <img src="./img/#139_authentication_twocolour.svg" alt="" class="form__img"> -->
-      <div class="form__img">
-        <img src="./resources/img/logo.jpg" alt="EcE Logo">
-      </div>
-
       <div class="content">
 
         <form action="" class="form__content">
-          <h1 class="form__title">Fill Data</h1>
+          <h2 class="form__title">Fill Data</h2>
           <!-- Name -->
           <div class="form__div">
             <input type="text" class="form__input form__name" placeholder=" " required>
@@ -35,7 +30,7 @@
           </div>
           <!-- Donate Amount -->
           <div class="form__div">
-            <input type="text" class="form__input form__amount" placeholder=" " required>
+            <input type="text" class="form__input form__amount" placeholder=" " required pattern="[0-9]*">
             <lable class="form__label">Amount</lable>
           </div>
           <!-- Date -->
@@ -46,8 +41,8 @@
           <!-- Batch -->
          <div class="form__div">
           <!-- <label for="">Select Batch</label> -->
-          <select class="form__input form__batch"  required>
-            <option style="color: #80868b;">Select Batch</option>
+          <select class="form__input form__batch"  required">
+            <option style="color: #80868b;" value="">Select Batch</option>
             <option value="1st Batch">1st Batch</option>
             <option value="2nd Batch">2nd Batch</option>
             <option value="3rd Batch">3rd Batch</option>
@@ -75,7 +70,7 @@
         </form>
 
         <div class="check__content">
-          <h1 class="check__title">Check Data</h1>
+          <h2 class="check__title">Check Data</h2>
 
           <div class="check__info">
             <div class="check__data">
@@ -117,7 +112,10 @@
           
         </div>
       </div>
+
     </div>
+
+    <p class="footer">&#169; 2021 EcE Fund Raising Team. All right reserved.</p>
   </div>
 
   <div class="voucher">
@@ -129,6 +127,13 @@
       <p class="voucher__name">Wai Yan Ko Ko Myint</p>
       <p class="voucher__SN">11111</p>
       <p class="voucher__date">10-9-2021</p>
+    </div>
+  </div>
+
+  <div class="modal">
+    <div class="modal__content">
+      <div class="modal__img"></div>
+      <div class="modal__btn">Save Image</div>
     </div>
   </div>
   
