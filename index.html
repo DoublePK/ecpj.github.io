@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="./resources/css/style.css">
+
+  <title>Let's Support Our Hero</title>
+</head>
+<body>
+
+  <div class="l-form">
+    <div class="form">
+      <!-- <img src="./img/#139_authentication_twocolour.svg" alt="" class="form__img"> -->
+      <div class="form__img">
+        <img src="./resources/img/logo.jpg" alt="EcE Logo">
+      </div>
+
+      <div class="content">
+
+        <form action="" class="form__content">
+          <h1 class="form__title">Fill Data</h1>
+          <!-- Name -->
+          <div class="form__div">
+            <input type="text" class="form__input form__name" placeholder=" " required>
+            <label for="" class="form__label">Name</label>
+          </div>
+          <!-- Donate Amount -->
+          <div class="form__div">
+            <input type="text" class="form__input form__amount" placeholder=" " required>
+            <lable class="form__label">Amount</lable>
+          </div>
+          <!-- Date -->
+          <div class="form__div">
+            <input type="date" class="form__input form__date"  min="2021-02-01" required>
+            <label for="" class="form__label">Date</label>
+          </div>
+          <!-- Batch -->
+         <div class="form__div">
+          <!-- <label for="">Select Batch</label> -->
+          <select class="form__input form__batch"  required>
+            <option style="color: #80868b;">Select Batch</option>
+            <option value="1st Batch">1st Batch</option>
+            <option value="2nd Batch">2nd Batch</option>
+            <option value="3rd Batch">3rd Batch</option>
+            <option value="4th Batch">4th Batch</option>
+            <option value="5th Batch">5th Batch</option>
+            <option value="6th Batch">6th Batch</option>
+            <option value="7th Batch">7th Batch</option>
+            <option value="8th Batch">8th Batch</option>
+            <option value="9th Batch">9th Batch</option>
+            <option value="10th Batch">10th Batch</option>
+          </select> 
+         </div>
+         <!-- Seraial Number -->
+          <div class="form__div">
+            <input type="text" class="form__input form__SN" placeholder=" " required>
+            <lable class="form__label">Serial Number</lable>
+          </div>
+          <!-- Remark -->
+          <div class="form__div  remark form__remark">
+            <textarea class="form__input" rows="5" cols="30" placeholder=" "></textarea> 
+            <lable class="form__label">Remark</lable>
+          </div>
+          <input type="submit" class="form__button" value="Forward">
+  
+        </form>
+
+        <div class="check__content">
+          <h1 class="check__title">Check Data</h1>
+
+          <div class="check__info">
+            <div class="check__data">
+              <p class="check__label">Name   -  </p>
+              <p class="check__name">Pyae Phyo Kyaw</p>
+            </div>
+
+            <div class="check__data">
+              <p class="check__label">Amount   - </p>
+              <p class="check__amount">20000 Ks</p>
+            </div>
+
+            <div class="check__data">
+              <p class="check__label">Batch   -   </p>
+                <p class="check__batch">3rd Batch</p>
+            </div>
+
+            <div class="check__data">
+              <p class="check__label">Date   - </p>
+              <p class="check__date">2021-02-01</p>
+              
+            </div>
+
+            <div class="check__data">
+              <p class="check__label">SN   -  </p>
+              <p class="check__SN">123445</p>
+              
+            </div>
+            
+          </div>
+
+          
+          <form action="">
+            <div>
+              <input type="submit" class="check__button Edit" value="Edit">
+              <input type="submit" class="check__button Submit" value="Submit">
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="voucher">
+    <img class="voucher__img" src="./resources/img/bg.jpg" alt="">
+
+    <p class="voucher__amount">10000000</p>
+
+    <div class="voucher__content">
+      <p class="voucher__name">Wai Yan Ko Ko Myint</p>
+      <p class="voucher__SN">11111</p>
+      <p class="voucher__date">10-9-2021</p>
+    </div>
+  </div>
+  
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js""></script>
+ <!-- ===== MAIN JS ===== -->
+ <script src="./resources/js/main.js"></script>  
+
+
+</body>
+</html>
