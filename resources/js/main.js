@@ -97,6 +97,7 @@ function downloadImg(e){
 
   modal.style.display = 'none';
   formContent.style.display = 'block';
+  document.querySelector('.footer').style.display = 'block';
 }
 
 formContent.addEventListener('submit', displayCheck);
