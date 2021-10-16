@@ -58,50 +58,24 @@ function displayForm(e){
 function screenshot() {
   
   html2canvas(document.querySelector('.voucher')).then(function(canvas) {
-      // const modal = document.createElement('div');
-      // modal.className = 'modal';
-
-      // const modalContent = document.createElement('div');
-      // modalContent.className = 'modal__content';
-
-      // const modalImg = document.createElement('div');
-      // modalImg.className = 'modal__img';
-
-      // const modalBtn = document.createElement('button');
-      // modalBtn.className = 'modal__btn';
-      // modalBtn.setAttribute('type', 'button')
-      // modalBtn.innerText = 'Save Image';
-      // download = modalBtn;
-
       canvas.className = 'modal_canvas';
       canvas.removeAttribute('style');
       modalImg.appendChild(canvas)
 
-      // modalImg.appendChild(canvas);
-      // modalContent.appendChild(modalImg);
-      // modalContent.appendChild(modalBtn);
-      // modal.appendChild(modalContent);
-
-      // // modal.appendChild(canvas)
-      // document.body.appendChild(modal)
       modal.style.display = 'block';
       voucherCanvas = canvas;
   });
 }
 
-function voucherModal(voucher){
-  console.log(voucher);
-  document.body.appendChild(voucher)
-}
 
 function displayVoucher(e){
   e.preventDefault();
   checkContent.style.display = 'none';
   voucher.style.display = 'block';
-    voucherName.innerHTML = Name;
-    voucherAmount.innerHTML = Amount;
-    voucherDate.innerHTML = date;
-    voucherSN.innerHTML = SerialNumber;
+  voucherName.innerHTML = Name;
+  voucherAmount.innerHTML = Amount;
+  voucherDate.innerHTML = date;
+  voucherSN.innerHTML = SerialNumber;
   voucherCanvas = screenshot();
   voucher.style.display = 'none';
   document.querySelector('.footer').style.display = 'none';
@@ -110,7 +84,6 @@ function displayVoucher(e){
   formBatch.value = '';
   formDate.value = '';
   formSN.value = '';
-  // voucherModal(voucherCanvas);
 }
 
 function downloadImg(e){
@@ -121,6 +94,9 @@ function downloadImg(e){
   link.href = voucherCanvas.toDataURL();
   link.click();
   link.delete;
+
+  modal.style.display = 'none';
+  formContent.style.display = 'block';
 }
 
 formContent.addEventListener('submit', displayCheck);
@@ -130,5 +106,3 @@ EditBtn.addEventListener('click', displayForm);
 SubmitBtn.addEventListener('click', displayVoucher)
 
 download.addEventListener('click', downloadImg)
-
-//displayVoucher();
