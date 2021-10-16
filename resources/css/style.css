@@ -245,6 +245,8 @@ select option:nth-child(1){
 }
 
 .voucher__amount{
+  text-align: right;
+  width: 90px;
   position: absolute;
   bottom: 45px;
   left: 180px;
