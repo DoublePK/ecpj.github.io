@@ -21,27 +21,27 @@
     <div class="form">
       <div class="content">
 
-        <form action="" class="form__content">
+        <form action="" class="form__content" name="submitted-form">
           <h2 class="form__title">Fill Data</h2>
           <!-- Name -->
           <div class="form__div">
-            <input type="text" class="form__input form__name" placeholder=" " required>
+            <input type="text" class="form__input form__name" name="Name" placeholder=" " required>
             <label for="" class="form__label">Name</label>
           </div>
           <!-- Donate Amount -->
           <div class="form__div">
-            <input type="text" class="form__input form__amount" placeholder=" " required pattern="[0-9]*">
+            <input type="text" class="form__input form__amount" name="Amount" placeholder=" " required pattern="[0-9]*">
             <lable class="form__label">Amount</lable>
           </div>
           <!-- Date -->
           <div class="form__div">
-            <input type="date" class="form__input form__date"  min="2021-02-01" required>
+            <input type="date" class="form__input form__date" name="Date"  min="2021-02-01" required>
             <label for="" class="form__label">Date</label>
           </div>
           <!-- Batch -->
          <div class="form__div">
           <!-- <label for="">Select Batch</label> -->
-          <select class="form__input form__batch"  required">
+          <select class="form__input form__batch" name="Batch"  required">
             <option style="color: #80868b;" value="">Select Batch</option>
             <option value="1st Batch">1st Batch</option>
             <option value="2nd Batch">2nd Batch</option>
@@ -57,12 +57,12 @@
          </div>
          <!-- Seraial Number -->
           <div class="form__div">
-            <input type="text" class="form__input form__SN" placeholder=" " required>
+            <input type="text" class="form__input form__SN" name="Serial-Number" placeholder=" " required>
             <lable class="form__label">Serial Number</lable>
           </div>
           <!-- Remark -->
           <div class="form__div  remark form__remark">
-            <textarea class="form__input" rows="5" cols="30" placeholder=" "></textarea> 
+            <textarea class="form__input" rows="5" cols="30" name="Remark" placeholder=" "></textarea> 
             <lable class="form__label">Remark</lable>
           </div>
           <input type="submit" class="form__button" value="Forward">
@@ -139,6 +139,8 @@
   
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js""></script>
+
+  <!-- <script src="https://script.google.com/macros/library/d/1047HQYfrVU_TK8eKzSF5VabrAWPg_nIEjwTWrI1RTUWA67xg2V5DLvHk/2"></script> -->
  <!-- ===== MAIN JS ===== -->
  <script src="./resources/js/main.js"></script>  
 

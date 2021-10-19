@@ -65,7 +65,7 @@ display: block;
 /*===== FORM =====*/
 .l-form{
   position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .form{

@@ -27,6 +27,9 @@ const modal = document.querySelector('.modal');
 const modalImg = document.querySelector('.modal__img');
 const download = document.querySelector('.modal__btn');
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzoHLWIJUf8uOjLdcH5_S1i2iUR8vQ8gEl1t4FV1sMtFKQFnhsQQR5YOgpjUCE-V9UI/exec';
+const form = document.forms['submitted-form'];
+
 let Name, Amount, Batch, date, SerialNumber, Remark = '';
 let voucherCanvas;
 
@@ -70,6 +73,13 @@ function screenshot() {
 
 function displayVoucher(e){
   e.preventDefault();
+
+  console.log(form);
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message));
+
+      
   checkContent.style.display = 'none';
   voucher.style.display = 'block';
   voucherName.innerHTML = Name;
@@ -84,6 +94,7 @@ function displayVoucher(e){
   formBatch.value = '';
   formDate.value = '';
   formSN.value = '';
+
 }
 
 function downloadImg(e){
@@ -107,3 +118,14 @@ EditBtn.addEventListener('click', displayForm);
 SubmitBtn.addEventListener('click', displayVoucher)
 
 download.addEventListener('click', downloadImg)
+
+//submitting form
+// const scriptURL = '<https://script.google.com/macros/s/AKfycbwuYw4U9fjN_FYu2s2Ob-YajBAUnmcm5WKUYqiCy74VMFQXp5nTYKCFLB4qhcvYAg4p/execL>'
+
+
+//   form.addEventListener('click', e => {
+//     e.preventDefault()
+//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//       .then(response => console.log('Success!', response))
+//       .catch(error => console.error('Error!', error.message))
+//   })
