@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+/*
 Default Theme
 ----------------
   font    : Open Sans
@@ -39,7 +46,8 @@ Default Theme
 
 /*==================== BASE ====================*/
 *, ::before, ::after{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -69,14 +77,19 @@ display: block;
 }
 
 .form{
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
-.form__img{
+/* .form__img{
   display: none;
-}
+} */
 
 .content{
   width: 100%;
@@ -89,6 +102,8 @@ display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 3rem 1rem;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 
@@ -123,7 +138,7 @@ display: block;
   border-radius: .5rem;
   outline: none;
   padding: 1rem;
-  background: none;
+  background: transparent;
   z-index: 1;
 }
 
@@ -140,6 +155,7 @@ select option:nth-child(1){
   color: var(--input-color);
   font-size: var(--normal-font-size);
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -161,6 +177,7 @@ select option:nth-child(1){
   border-radius: .5rem;
   cursor: pointer;
   -webkit-transition: .5s;
+  -o-transition: .5s;
   transition: .5s;
 }
 
@@ -182,6 +199,22 @@ select option:nth-child(1){
   font-size: var(--small-font-size);
   font-weight: 500;
   z-index: 10;
+}
+
+.form__input:not(:-moz-placeholder-shown).form__input:not(:focus)  + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  z-index: 10;
+  font-size: var(--small-font-size);
+  font-weight: 500
+}
+
+.form__input:not(:-ms-input-placeholder).form__input:not(:focus)  + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  z-index: 10;
+  font-size: var(--small-font-size);
+  font-weight: 500
 }
 
 .form__input:not(:placeholder-shown).form__input:not(:focus)  + .form__label {
@@ -216,8 +249,11 @@ select option:nth-child(1){
 }
 
 .check__content form div{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 1rem;
 }
 
@@ -229,7 +265,9 @@ select option:nth-child(1){
   position: absolute;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 
@@ -254,14 +292,16 @@ select option:nth-child(1){
   font-size: 20px;
   font-family: var(--default-font-family);
   font-weight: bold;
-  color: red;
+  color: var(--black-color);
 }
 
 .voucher__content{
   position: absolute;
   right: -8px;
   bottom: 143px;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   width: 200px;
   font-family: var(--default-font-family);
   font-size: 15px;
@@ -282,6 +322,7 @@ select option:nth-child(1){
   overflow: hidden;
   position: relative;
   display: none;
+  z-index: 1000;
 }
 
 .modal__content{
@@ -290,7 +331,9 @@ select option:nth-child(1){
   left: 50%;
   /* margin-left: auto;
   margin-right: auto; */
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
   overflow: hidden;
 }
@@ -311,7 +354,37 @@ select option:nth-child(1){
   margin-left: auto;
   margin-right: auto;
   font-size: 14px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
+}
+
+.modal__success,
+.modal__error{
+  /* display: block; */
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.25rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--white-color);
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+
+.modal__success{
+  color: #247224;
+  display: none;
+}
+
+.modal__error{
+  color: red;
+  display: none;
 }
 
 @media screen and (max-width: 370px) {

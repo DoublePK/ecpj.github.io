@@ -74,10 +74,22 @@ function screenshot() {
 function displayVoucher(e){
   e.preventDefault();
 
-  console.log(form);
+  // console.log(form);
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message));
+      .then(response => {
+        console.log('Success!', response)
+        document.querySelector('.modal__success').style.display = 'block';
+        window.setTimeout(() => {
+          document.querySelector('.modal__success').style.display = 'none'; 
+        }, 3000);
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        document.querySelector('.modal__error').style.display = 'block';
+        window.setTimeout(() => {
+          document.querySelector('.modal__error').style.display = 'none'; 
+        }, 3000);
+      });
 
       
   checkContent.style.display = 'none';
@@ -88,7 +100,8 @@ function displayVoucher(e){
   voucherSN.innerHTML = SerialNumber;
   voucherCanvas = screenshot();
   voucher.style.display = 'none';
-  document.querySelector('.footer').style.display = 'none';
+  // document.querySelector('.footer').style.display = 'none';
+  document.querySelector('.l-form').style.display = 'none';
   formName.value = '';
   formAmount.value = '';
   formBatch.value = '';
@@ -109,6 +122,7 @@ function downloadImg(e){
   modal.style.display = 'none';
   formContent.style.display = 'block';
   document.querySelector('.footer').style.display = 'block';
+  document.querySelector('.l-form').style.display = 'block';
 }
 
 formContent.addEventListener('submit', displayCheck);
@@ -119,13 +133,3 @@ SubmitBtn.addEventListener('click', displayVoucher)
 
 download.addEventListener('click', downloadImg)
 
-//submitting form
-// const scriptURL = '<https://script.google.com/macros/s/AKfycbwuYw4U9fjN_FYu2s2Ob-YajBAUnmcm5WKUYqiCy74VMFQXp5nTYKCFLB4qhcvYAg4p/execL>'
-
-
-//   form.addEventListener('click', e => {
-//     e.preventDefault()
-//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//       .then(response => console.log('Success!', response))
-//       .catch(error => console.error('Error!', error.message))
-//   })
