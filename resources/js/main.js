@@ -118,8 +118,10 @@ function downloadImg(e){
   link.href = voucherCanvas.toDataURL();
   link.click();
   link.delete;
+  
 
   modal.style.display = 'none';
+  modalImg.innerHTML = '';
   formContent.style.display = 'block';
   document.querySelector('.footer').style.display = 'block';
   document.querySelector('.l-form').style.display = 'block';
